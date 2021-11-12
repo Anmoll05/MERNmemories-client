@@ -25,7 +25,7 @@ export const createPost=async (newPost)=>{
     await API.post('/posts',newPost);
     window.location.reload();}
     catch(e){
-      alert('Please attach .jpeg image only');
+     // alert('Please attach .jpeg image only');
     }
 }
 
@@ -35,7 +35,7 @@ export const updatePost = async(id,updatedPost)=>{
     window.location.reload();
   }
   catch(e){
-    alert('Please attach .jpeg image only');
+    //alert('Please attach .jpeg image only');
   }
     
 }

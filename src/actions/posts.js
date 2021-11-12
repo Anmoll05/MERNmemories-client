@@ -29,7 +29,7 @@ export const createPost =(post)=> async(dispatch)=>{
     }
     catch(error){
                     console.log(error);
-                    alert('Please select .jpeg format of picture');
+                 //   alert('Please select .jpeg format of picture');
     }
 }
 
