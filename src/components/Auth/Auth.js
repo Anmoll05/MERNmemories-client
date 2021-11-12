@@ -52,8 +52,11 @@ const Auth = () => {
     }
   };
 
-  const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
+  const googleError = (e) =>{
+    console.log(e.message);
+    alert('Google Sign In was unsuccessful. Try again later');
 
+  } 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
@@ -86,7 +89,7 @@ const Auth = () => {
               </Button>
             )}
             onSuccess={googleSuccess}
-            onFailure={googleError}
+            onFailure={(e)=>console.log(e)}
             cookiePolicy="single_host_origin"
           />
           <Grid container justify="flex-end">
