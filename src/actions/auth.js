@@ -9,7 +9,9 @@ export const signin = (formData, router) => async (dispatch) => {
 
     router.push('/');
   } catch (error) {
+    alert('Please enter correct comination of email and password');
     console.log(error);
+    
   }
 };
 

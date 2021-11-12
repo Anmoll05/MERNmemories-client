@@ -21,17 +21,33 @@ export  const fetchPosts= async ()=>
     return res;
 }
 export const createPost=async (newPost)=>{
-    console.log(newPost);
+    try{console.log(newPost);
     await API.post('/posts',newPost);
-    window.location.reload();
+    window.location.reload();}
+    catch(e){
+      alert('Please attach .jpeg image only');
+    }
 }
 
 export const updatePost = async(id,updatedPost)=>{
+  try{
     await API.patch(`/posts/${id}`,updatedPost);
     window.location.reload();
+  }
+  catch(e){
+    alert('Please attach .jpeg image only');
+  }
+    
 }
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
                  
 export const deletePost = (id) => API.delete(`/posts/${id}`);
-export const signIn = (formData) => API.post('/user/signin', formData);
+export const signIn = (formData) =>{
+  try{
+    API.post('/user/signin', formData);
+  }
+  catch(e){
+  alert('Please enter correct combination of email and password');
+  }
+} 
 export const signUp = (formData) => API.post('/user/signup', formData);
